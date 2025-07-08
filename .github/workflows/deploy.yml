@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Build and Deploy to GitHub Pages
 
 on:
   push:
@@ -38,7 +38,7 @@ jobs:
       uses: actions/configure-pages@v4
 
     - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
+      uses: actions/upload-pages-artifact@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         path: './dist'
